@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:report_system_admin/src/controllers/central_state.dart';
 import 'package:report_system_admin/src/views/desktop_view/home_page.dart';
 
 void main() {
   runApp(const MyApp());
 }
+final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
+final CentralState centralState =CentralState();
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
