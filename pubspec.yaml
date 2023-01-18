@@ -40,6 +40,7 @@ dependencies:
   country_code_picker: ^2.0.2
   gap: ^2.0.1
   flutter_riverpod:
+  responsive_builder: ^0.4.2
   pin_code_fields:
   modal_bottom_sheet:
   bot_toast:
