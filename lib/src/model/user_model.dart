@@ -3,19 +3,19 @@ class UserModel{
   String? mobile;
   String? userId;
   String? email;
-  String? regNo;
 
-  UserModel({this.regNo,this.name,this.email,this.mobile,this.userId});
+
+  UserModel({this.name,this.email,this.mobile,this.userId});
 
   UserModel.fromJson(Map<String, dynamic> data){
     name = data['name'];
     mobile = data['mobile'];
     email = data['email'];
-    regNo= data['regNo'];
+
   }
   toJson(){
     Map<String,dynamic> data={};
-    data['regNo']= regNo;
+
     data['mobile']= mobile;
     data['email'] = email;
     data['name'] = name;
