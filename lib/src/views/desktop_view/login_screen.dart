@@ -15,10 +15,18 @@ class LoginScreen extends ConsumerStatefulWidget {
   ConsumerState createState() => _LoginScreenState();
 }
 
+
 class _LoginScreenState extends ConsumerState<LoginScreen> {
   @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    final userController = ref.read(userProvider);
+  }
+  @override
   Widget build(BuildContext context) {
-    final appTheme = ref.read(themeProvider);
+    final appTheme = ref.watch(themeProvider);
+    final userController = ref.watch(userProvider);
     return Scaffold(
       backgroundColor: white,
       body: SingleChildScrollView(
@@ -34,6 +42,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                 width:500,
                 height:100,
                 child: TextFormField(
+                  controller: userController.emailController,
                   decoration: InputDecoration(
                     hintText: 'email',
                     border: OutlineInputBorder()
@@ -42,13 +51,16 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
             SizedBox(
                 width:500,
                 height:100,
-                child: TextFormField(  decoration: InputDecoration(
+                child: TextFormField(
+                  controller: userController.passwordController,
+                  decoration: InputDecoration(
                   hintText: 'password',
                     border: OutlineInputBorder()
                 ),)),
             Gap(30),
 
-            ElevatedButton(onPressed: (){},
+           userController
+            .loading?Center(child: CircularProgressIndicator()):ElevatedButton(onPressed: (){},
                 style: ElevatedButton.styleFrom(
                   maximumSize: Size(500,50),
                     minimumSize: Size(500,50)
