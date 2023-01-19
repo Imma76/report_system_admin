@@ -1,15 +1,20 @@
+import 'package:bot_toast/bot_toast.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:report_system_admin/firebase_options.dart';
 import 'package:report_system_admin/src/controllers/central_state.dart';
 import 'package:report_system_admin/src/views/desktop_view/home_page.dart';
 import 'package:report_system_admin/src/views/desktop_view/login_screen.dart';
 
-void main() {
+void main()async {
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   runApp(const MyApp());
 }
 final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 final CentralState centralState =CentralState();
 
+final botToastBuilder = BotToastInit();
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
@@ -18,6 +23,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ProviderScope(
       child: MaterialApp(
+
+          navigatorObservers: [BotToastNavigatorObserver()],
+          builder: BotToastInit(),
         title: 'Flutter Demo',
         theme: ThemeData(
           // This is the theme of your application.

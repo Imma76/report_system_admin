@@ -33,12 +33,25 @@
   <link rel="manifest" href="manifest.json">
 
   <script>
+  const firebaseConfig = {
+  apiKey: "AIzaSyB55OiE8Ymk6_9fH_VHaSGimWL50l29EVw",
+  authDomain: "report-system-8d623.firebaseapp.com",
+  projectId: "report-system-8d623",
+  storageBucket: "report-system-8d623.appspot.com",
+  messagingSenderId: "452041305778",
+  appId: "1:452041305778:web:2d479479ab533b6f60a3ab",
+  measurementId: "G-98K3NHNFFB"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
     // The value below is injected by flutter build, do not touch.
     var serviceWorkerVersion = null;
   </script>
   <!-- This script adds the flutter initialization JS code -->
   <script src="flutter.js" defer></script>
 </head>
+
 <body>
   <script>
     window.addEventListener('load', function(ev) {
