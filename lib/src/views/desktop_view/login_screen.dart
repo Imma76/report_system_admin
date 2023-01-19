@@ -6,6 +6,7 @@ import 'package:report_system_admin/src/providers/all_provider.dart';
 import '../../utils/constants.dart';
 
 class LoginScreen extends ConsumerStatefulWidget {
+  static const route ='desktop_login';
   const LoginScreen({
     Key? key,
   }) : super(key: key);

@@ -9,6 +9,7 @@ import '../../utils/constants.dart';
 
 
 class DesktopHomePage extends ConsumerStatefulWidget {
+  static const route='desktop_home';
   const DesktopHomePage({
     Key? key,
   }) : super(key: key);
