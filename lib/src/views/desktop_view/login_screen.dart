@@ -34,16 +34,16 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Gap(30),
+            const Gap(30),
             Center(child: Image.asset('assets/admin_login.jpg',height: 300,width:300,)),
             Text('LOGIN',style: appTheme.textStyle.copyWith(color: black),),
-            Gap(50),
+            const Gap(50),
             SizedBox(
                 width:500,
                 height:100,
                 child: TextFormField(
                   controller: userController.emailController,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     hintText: 'email',
                     border: OutlineInputBorder()
                   ),
@@ -53,19 +53,19 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                 height:100,
                 child: TextFormField(
                   controller: userController.passwordController,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                   hintText: 'password',
-                    border: OutlineInputBorder()
+                    border: const OutlineInputBorder()
                 ),)),
-            Gap(30),
+            const Gap(30),
 
            userController
-            .loading?Center(child: CircularProgressIndicator()):ElevatedButton(onPressed: (){
+            .loading?const Center(child: const CircularProgressIndicator()):ElevatedButton(onPressed: (){
               userController.loginAdmin();
            },
                 style: ElevatedButton.styleFrom(
-                  maximumSize: Size(500,50),
-                    minimumSize: Size(500,50)
+                  maximumSize: const Size(500,50),
+                    minimumSize: const Size(500,50)
 
                 ),
                 child: Text('CONTINUE',style: appTheme.textStyle.copyWith(color: white),))

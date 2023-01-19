@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:report_system_admin/firebase_options.dart';
 import 'package:report_system_admin/src/controllers/central_state.dart';
+import 'package:report_system_admin/src/providers/all_provider.dart';
 import 'package:report_system_admin/src/routes.dart';
 import 'package:report_system_admin/src/views/desktop_view/home_page.dart';
 import 'package:report_system_admin/src/views/desktop_view/login_screen.dart';
@@ -16,6 +17,9 @@ final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 final CentralState centralState =CentralState();
 
 final botToastBuilder = BotToastInit();
+
+
+
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
@@ -42,7 +46,7 @@ class MyApp extends StatelessWidget {
 
         ),
         routes: routes,
-        home:  LoginScreen()
+        home:  NavigatorApp()
 
         //DesktopHomePage(),
       ),
@@ -50,3 +54,19 @@ class MyApp extends StatelessWidget {
   }
 }
 
+
+class NavigatorApp extends ConsumerWidget {
+  const NavigatorApp({
+    Key? key,
+  }) : super(key: key);
+
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final centralProvider= ref.watch(centralStateController);
+    if(centralProvider.isUserPresent){
+      return DesktopHomePage();
+    }
+    return LoginScreen();
+  }
+}
