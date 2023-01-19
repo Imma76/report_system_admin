@@ -15,6 +15,13 @@ class  UserController extends ChangeNotifier{
   bool loading=false;
 
   void loginAdmin()async{
+
+    if(emailController.text== null && passwordController.text ==null|| emailController.text==''||passwordController.text==
+    ''){
+      showToast("complete all fields");
+      return;
+
+    }
     loading=true;
     notifyListeners();
     final user = await userService.loginAdmin(email: emailController.text.trim(), password: passwordController.text.trim());
