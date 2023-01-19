@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:report_system_admin/firebase_options.dart';
 import 'package:report_system_admin/src/controllers/central_state.dart';
+import 'package:report_system_admin/src/routes.dart';
 import 'package:report_system_admin/src/views/desktop_view/home_page.dart';
 import 'package:report_system_admin/src/views/desktop_view/login_screen.dart';
 
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ProviderScope(
       child: MaterialApp(
-
+          navigatorKey: navigatorKey,
           navigatorObservers: [BotToastNavigatorObserver()],
           builder: BotToastInit(),
         title: 'Flutter Demo',
@@ -38,7 +39,9 @@ class MyApp extends StatelessWidget {
           // Notice that the counter didn't reset back to zero; the application
           // is not restarted.
           primarySwatch: Colors.blue,
+
         ),
+        routes: routes,
         home:  LoginScreen()
 
         //DesktopHomePage(),

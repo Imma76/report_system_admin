@@ -60,7 +60,9 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
             Gap(30),
 
            userController
-            .loading?Center(child: CircularProgressIndicator()):ElevatedButton(onPressed: (){},
+            .loading?Center(child: CircularProgressIndicator()):ElevatedButton(onPressed: (){
+              userController.loginAdmin();
+           },
                 style: ElevatedButton.styleFrom(
                   maximumSize: Size(500,50),
                     minimumSize: Size(500,50)

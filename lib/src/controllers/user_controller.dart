@@ -25,7 +25,11 @@ class  UserController extends ChangeNotifier{
     loading=true;
     notifyListeners();
     final user = await userService.loginAdmin(email: emailController.text.trim(), password: passwordController.text.trim());
-
+    if(user ==null){
+      loading=false;
+      notifyListeners();
+      return;
+    }
     showToast('signed in successfully');
     // if(user!=null){
     //
