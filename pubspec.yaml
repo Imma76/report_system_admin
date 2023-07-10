@@ -37,12 +37,16 @@ dependencies:
   introduction_screen: ^3.1.1
   image_picker:
   jiffy:
-  country_code_picker: ^2.0.2
+
   gap: ^2.0.1
+  firebase_in_app_messaging:
+  firebase_messaging:
+  flutter_local_notifications: ^8.2.0
   flutter_riverpod:
   responsive_builder: ^0.4.2
+
   pin_code_fields:
-  modal_bottom_sheet:
+  modal_bottom_sheet: ^3.0.0-pre
   bot_toast:
   file_picker:
   google_fonts:
@@ -56,6 +60,7 @@ dependencies:
   firebase_storage:
   cloud_firestore:
   firebase_auth:
+  http:
   firebase_core:
 
 dev_dependencies:

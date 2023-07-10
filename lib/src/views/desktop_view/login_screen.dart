@@ -36,7 +36,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
           children: [
             const Gap(30),
             Center(child: Image.asset('assets/admin_login.jpg',height: 300,width:300,)),
-            Text('LOGIN',style: appTheme.textStyle.copyWith(color: black),),
+            Text('ADMIN LOGIN',style: appTheme.textStyle.copyWith(color: black),),
             const Gap(50),
             SizedBox(
                 width:500,

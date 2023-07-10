@@ -17,7 +17,7 @@ class ThemeController extends ChangeNotifier{
 
 
 // Define the default font family.
-      fontFamily: 'Lora',
+      fontFamily: 'dmSans',
       accentColor: primaryColor,
       //hintColor: primaryColor,
 
@@ -26,7 +26,7 @@ class ThemeController extends ChangeNotifier{
       textTheme: const TextTheme(
         headline1: TextStyle(fontSize: 72.0, fontWeight: FontWeight.bold),
         headline6: TextStyle(fontSize: 36.0, fontStyle: FontStyle.italic),
-        bodyText2: TextStyle(fontSize: 14.0, fontFamily: 'Lora'),
+        bodyText2: TextStyle(fontSize: 14.0, fontFamily: 'dmSans'),
       ));
 
   final darkTheme = ThemeData(
